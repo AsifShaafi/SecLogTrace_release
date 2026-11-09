@@ -1,0 +1,45 @@
+# SecLogTrace .gitignore
+#
+# Pilot-/experiment-scale raw and processed data stays committed (decision
+# 2026-08-21) so small datasets are usable from any machine. BUT at CORPUS
+# scale this does not hold: the 5-class corpus raw Jaeger is ~1.2 GB and the
+# processed span tables ~268 MB (mostly per-service export duplication +
+# NacosWatch noise). Committing that to git history is impractical, so as of
+# 2026-09-04 (option A) the bulk is archived SEPARATELY (Zenodo/Figshare, for
+# the Paper A / MSR data-showcase DOI release) and ignored here. What STAYS in
+# git: trace feature tables (data/processed/combined/), traffic session logs
+# (data/raw/traffic/), and per-trace log features (logs_by_trace.csv) — the
+# reproducible, citable core. Already-committed pilot data is unaffected.
+data/raw/jaeger/
+data/raw/logs/
+data/processed/traces/
+data/processed/logs/**/logs.csv
+data/processed/logs/**/_raw/
+
+# Python bytecode -- never useful to commit, and two stray .pyc files
+# were already tracked before this file existed (removed 2026-08-21).
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local virtual environments, if one is ever created here
+.venv/
+venv/
+env/
+
+# Jupyter checkpoints, if notebooks are ever added
+.ipynb_checkpoints/
+
+# OS-generated cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE settings not shared with the team
+.vscode/
+.idea/
+
+# Local secrets -- never commit these even if one shows up
+.env
+*.pem
+*.key
