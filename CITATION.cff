@@ -1,0 +1,95 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "SecLogTrace: a labelled trace-and-log corpus of microservice security anomalies (two systems)"
+type: dataset
+version: "1.0.0"
+# date-released must equal the Zenodo publication date. Set it on the day the
+# record is published, not before.
+date-released: 2026-11-02
+license: CC-BY-4.0            # data; the code is Apache-2.0, see LICENSE
+authors:
+  - given-names: "Asif Imtiaz"
+    family-names: "Shaafi"
+    email: "asifimtiaz_shaafi1@baylor.edu"
+    affiliation: "Department of Computer Science, Baylor University, Waco, TX, USA"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add before camera-ready
+  - given-names: "Tingshuo"
+    family-names: "Miao"
+    email: "tingshuo_miao2@baylor.edu"
+    affiliation: "Department of Computer Science, Baylor University, Waco, TX, USA"
+  - given-names: "Gan-Orgil"
+    family-names: "Gantumur"
+    email: "ganorgil_gantumur1@baylor.edu"
+    affiliation: "Department of Computer Science, Baylor University, Waco, TX, USA"
+  - given-names: "Eunjee"
+    family-names: "Song"
+    email: "eunjee_song@baylor.edu"
+    affiliation: "Department of Computer Science, Baylor University, Waco, TX, USA"
+url: "https://github.com/AsifShaafi/SecLogTrace_release"
+doi: "10.5281/zenodo.24093117"
+# Version DOI (reserved on the draft record; resolves once the record is
+# published). This is the specific-version doi, not the concept doi: the concept
+# doi follows the newest version and would unpin the reported numbers from the
+# archive they were computed against.
+keywords:
+  - microservices
+  - distributed tracing
+  - OpenTelemetry
+  - application logs
+  - security anomaly detection
+  - server-side request forgery
+  - labelled dataset
+  - Train-Ticket
+  - TeaStore
+abstract: >-
+  A labelled corpus of OpenTelemetry distributed traces joined to application
+  logs, for evaluating security-anomaly detection in microservice systems. Five
+  CWE-referenced scenarios (server-side request forgery, credential abuse,
+  injection, data exfiltration, resource exhaustion) are collected on two
+  architecturally distinct benchmarks: Train-Ticket under Kubernetes and
+  TeaStore under Docker Compose. Every request-level trace carries a normal or
+  attack label and a four-state log observation status, so an absent log join
+  is distinguishable from an absent log record. The corpus holds 11,000
+  labelled trace records: 5,000 on Train-Ticket and 6,000 on TeaStore. It ships
+  with a 120-cell demonstrative detector registry, a fold manifest, and audit
+  tables that record which cells are interpretable and which are withdrawn.
+references:
+  - type: conference-paper
+    title: "Fault Analysis and Debugging of Microservice Systems: Industrial Survey, Benchmark System, and Empirical Study"
+    authors:
+      - family-names: "Zhou"
+        given-names: "Xiang"
+      - family-names: "Peng"
+        given-names: "Xin"
+      - family-names: "Xie"
+        given-names: "Tao"
+      - family-names: "Sun"
+        given-names: "Jun"
+      - family-names: "Ji"
+        given-names: "Chao"
+      - family-names: "Li"
+        given-names: "Wenhai"
+      - family-names: "Ding"
+        given-names: "Dan"
+    year: 2021
+    doi: "10.1109/TSE.2018.2887384"
+    notes: "Train-Ticket, system under test 1"
+  - type: conference-paper
+    title: "TeaStore: A Micro-Service Reference Application for Benchmarking, Modeling and Resource Management Research"
+    authors:
+      - family-names: "von Kistowski"
+        given-names: "Jóakim"
+      - family-names: "Eismann"
+        given-names: "Simon"
+      - family-names: "Schmitt"
+        given-names: "Norbert"
+      - family-names: "Bauer"
+        given-names: "André"
+      - family-names: "Grohmann"
+        given-names: "Johannes"
+      - family-names: "Kounev"
+        given-names: "Samuel"
+    year: 2018
+    notes: >-
+      TeaStore, system under test 2. The upstream citation block carries no DOI
+      and no page range; neither has been independently verified here.

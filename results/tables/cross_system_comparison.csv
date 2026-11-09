@@ -1,0 +1,16 @@
+class,arm,sut1_rf_f1,sut2_rf_f1,delta
+credential_abuse,combined,1.0,0.773,-0.227
+credential_abuse,log,1.0,0.55,-0.45
+credential_abuse,trace,1.0,0.779,-0.221
+data_exfiltration,combined,0.942,1.0,0.058
+data_exfiltration,log,0.666,0.4,-0.266
+data_exfiltration,trace,0.941,1.0,0.059
+injection,combined,1.0,1.0,0.0
+injection,log,1.0,1.0,0.0
+injection,trace,1.0,1.0,0.0
+resource_exhaustion,combined,0.96,0.573,-0.387
+resource_exhaustion,log,0.699,0.133,-0.566
+resource_exhaustion,trace,0.955,0.571,-0.384
+ssrf,combined,1.0,1.0,0.0
+ssrf,log,0.666,0.666,0.0
+ssrf,trace,1.0,1.0,0.0

@@ -11,7 +11,6 @@ a `normal` or `attack` label and a four-state log observation status.
 - **Scale:** 11,000 labelled trace records — **SUT1 = 5,000**, **SUT2 = 6,000**.
 - **Schema:** [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md)
 - **Data statement:** [`docs/DATA_STATEMENT.md`](docs/DATA_STATEMENT.md)
-- **Running example:** [`docs/RUNNING_EXAMPLE.md`](docs/RUNNING_EXAMPLE.md)
 
 ## Read this before counting rows
 
@@ -180,8 +179,7 @@ needs to reproduce it exactly.
 
 ## Running example
 
-No system bring-up. Runs on the shipped tables in about two minutes. Full
-transcript and timings in [`docs/RUNNING_EXAMPLE.md`](docs/RUNNING_EXAMPLE.md).
+No system bring-up. Runs on the shipped tables in about two minutes.
 
 ```bash
 pip install -r requirements.txt
@@ -200,7 +198,7 @@ python scripts/detection/build_degeneracy_audit.py \
 python scripts/preprocessing/build_quality_audit.py \
     --processed-dir data/processed --traffic-dir data/raw/traffic \
     --sut1-results results/tables/detection_results.csv \
-    --sut2-results results/tables/detection_results_sut2.csv \
+    --sut2-results results/tables/detection_results_sut2_v2.csv \
     --out-dir results/audit
 
 # 4. Check every quantitative claim in the paper against those tables.
@@ -246,13 +244,13 @@ missing data.
 
 ## Availability, licence, citation
 
-- **Dataset archive:** DOI to be inserted once the Zenodo record is published.
-  The record is published with files restricted, which registers a resolvable
-  DOI while the corpus stays closed until the paper appears. Cite the **version**
-  DOI, not the concept DOI; the concept DOI follows the newest version and would
-  unpin these numbers from the archive they were computed against.
-- **Reviewer access:** by share link on the published record. The link opens the
-  restricted files without a Zenodo account.
+- **Dataset archive:** [`10.5281/zenodo.24093117`](https://doi.org/10.5281/zenodo.24093117)
+  (version DOI). The record is deposited with files restricted, which registers a
+  resolvable DOI while the corpus stays closed until the paper appears. Cite the
+  **version** DOI above, not the concept DOI; the concept DOI follows the newest
+  version and would unpin these numbers from the archive they were computed against.
+- **Reviewer access:** a private share link on the record (sent with the paper
+  submission) opens the restricted files without a Zenodo account.
 - **Code licence:** Apache License 2.0 — [`LICENSE`](LICENSE)
 - **Data licence:** CC BY 4.0 — [`LICENSE-DATA`](LICENSE-DATA)
 - **Third-party components and change notices:** [`NOTICE`](NOTICE)

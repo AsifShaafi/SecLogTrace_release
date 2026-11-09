@@ -1,0 +1,9 @@
+# Dependencies for the analysis / running example (detection + figures) on the
+# committed feature tables. Python 3.9+. Pinned to minimums tested on this
+# corpus (pandas 1.5.3, numpy 1.24.2, scikit-learn 1.6.1, matplotlib 3.6.3).
+# The data-collection step (standing up the SUTs, exporting traces) additionally
+# needs the per-step requirements under scripts/*/requirements.txt.
+pandas>=1.5
+numpy>=1.24
+scikit-learn>=1.6
+matplotlib>=3.6

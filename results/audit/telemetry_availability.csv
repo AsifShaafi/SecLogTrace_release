@@ -1,0 +1,11 @@
+system,scenario,label,traces,matched,verified_no_match,coverage_pct,log_observation_status
+SUT1,ssrf,normal,500,0,,,unavailable
+SUT1,ssrf,attack,500,250,250.0,50.0,matched+verified_no_match
+SUT1,credential_abuse,normal,500,500,0.0,100.0,matched
+SUT1,credential_abuse,attack,500,500,0.0,100.0,matched
+SUT1,resource_exhaustion,normal,500,500,0.0,100.0,matched
+SUT1,resource_exhaustion,attack,500,500,0.0,100.0,matched
+SUT1,injection,normal,500,500,0.0,100.0,matched
+SUT1,injection,attack,500,500,0.0,100.0,matched
+SUT1,data_exfiltration,normal,500,500,0.0,100.0,matched
+SUT1,data_exfiltration,attack,500,500,0.0,100.0,matched

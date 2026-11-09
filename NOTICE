@@ -1,0 +1,82 @@
+SecLogTrace
+Copyright 2026 Asif Imtiaz Shaafi, Tingshuo Miao, Eunjee Song
+Department of Computer Science, Baylor University
+
+This product includes software developed as part of the SecLogTrace corpus,
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Data in this product is licensed separately under CC BY 4.0 (see LICENSE-DATA).
+
+--------------------------------------------------------------------------
+Third-party components
+--------------------------------------------------------------------------
+
+1. Train-Ticket (system under test 1)
+
+   Source:  https://github.com/FudanSELab/train-ticket
+   Licence: Apache License, Version 2.0
+
+   Train-Ticket is not redistributed in full. One service is included in
+   modified form; see the change notice in item 2.
+
+   Cite the benchmark as:
+     X. Zhou, X. Peng, T. Xie, J. Sun, C. Ji, W. Li, and D. Ding. "Fault
+     Analysis and Debugging of Microservice Systems: Industrial Survey,
+     Benchmark System, and Empirical Study." IEEE Transactions on Software
+     Engineering 47(2):243-260, 2021. doi:10.1109/TSE.2018.2887384
+
+2. Modified Train-Ticket service: ts-avatar-service
+
+   Paths:   fork_ts-avatar-service/
+            review_package_anon/injected_code/sut1_ts-avatar-service/
+
+   NOTICE OF CHANGES, as required by Apache License 2.0 section 4(b):
+
+   These files are derived from ts-avatar-service in the Train-Ticket
+   repository named in item 1, and HAVE BEEN MODIFIED by the SecLogTrace
+   authors. The modification adds a server-side request forgery sink: a
+   request handler that fetches a caller-supplied URL without validating
+   its destination. The sink exists to generate labelled SSRF telemetry and
+   is not present in upstream Train-Ticket.
+
+   The modification is deliberately vulnerable. Do not deploy it on a
+   network you do not control.
+
+   Original portions remain under the Apache License, Version 2.0, and the
+   original copyright and attribution notices are retained in the files.
+
+3. TeaStore (system under test 2)
+
+   Source:  https://github.com/DescartesResearch/TeaStore
+   Licence: Apache License, Version 2.0
+
+   TeaStore is not redistributed here and is not modified. It is obtained
+   from upstream and deployed unaltered. Telemetry collected from it is
+   included in the corpus.
+
+   The TeaStore authors request citation. Their own citation block, from the
+   upstream README, is:
+
+     J. von Kistowski, S. Eismann, N. Schmitt, A. Bauer, J. Grohmann, and
+     S. Kounev. "TeaStore: A Micro-Service Reference Application for
+     Benchmarking, Modeling and Resource Management Research." Proceedings
+     of the 26th IEEE International Symposium on the Modelling, Analysis,
+     and Simulation of Computer and Telecommunication Systems (MASCOTS '18),
+     Milwaukee, WI, USA, September 2018.
+
+   The upstream citation block carries no DOI and no page range. Neither has
+   been independently verified by the SecLogTrace authors; see
+   paper/msr2027/CITATION_VERIFICATION.md.
+
+4. Observability and analysis dependencies
+
+   Jaeger, the OpenTelemetry Java instrumentation agent and the Kieker
+   monitoring agent were used during collection. They are not redistributed
+   here. Each carries its own licence at its own source. The Kieker agent is
+   present in the SUT2 deployment because the upstream TeaStore images
+   include it; its presence is visible in the process.command_args tag of
+   the archived trace exports.
+
+   Python analysis dependencies are listed in requirements.txt, with the
+   exact resolved set used for verification in requirements-clean-env.txt.
+   Each carries its own licence at its own distribution point.
